@@ -72,7 +72,6 @@ jobs:
     - name: Build Push Container
       uses: docker/build-push-action@v4
       with:
-        context: .
         push: true
         # Push to renci-registry and dockerhub here.
         # cache comes from dockerhub.
