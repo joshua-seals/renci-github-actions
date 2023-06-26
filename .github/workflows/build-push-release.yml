@@ -76,9 +76,9 @@ jobs:
         # Push to renci-registry and dockerhub here.
         # cache comes from dockerhub.
         tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/appstore-testing:v${{ steps.version.outputs.version }}
-          ${{ secrets.DOCKERHUB_USERNAME }}/appstore-testing:latest
-          ${{ secrets.DOCKERHUB_USERNAME }}/appstore-testing:${{ steps.vars.outputs.short_sha }}
+          ${{ github.repository }}:v${{ steps.version.outputs.version }}
+          ${{ github.repository }}:latest
+          ${{ github.repository }}:${{ steps.vars.outputs.short_sha }}
         cache-from: type=registry,ref=${{ github.repository }}:buildcache-release
         cache-to: type=registry,ref=${{ github.repository }}:buildcache-release,mode=max
 
